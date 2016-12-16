@@ -1,0 +1,245 @@
+Read global directions .....
+Read Walls ........
+Read start positions ....
+Performing value iteration for iteration: 0.......
+Current State: 97
+Best action : 0
+New State: 92
+
+Performing value iteration for iteration: 1.......
+Current State: 92
+Best action : 0
+New State: 87
+
+Performing value iteration for iteration: 2.......
+Current State: 87
+Best action : 0
+New State: 82
+
+north,taxi_y,increment deleted due to overlapping conditions after update(effectlist[k])
+Performing value iteration for iteration: 3.......
+Current State: 82
+Best action : 1
+New State: 87
+
+Performing value iteration for iteration: 4.......
+Current State: 87
+Best action : 1
+New State: 92
+
+north,taxi_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 5.......
+Current State: 92
+Best action : 1
+New State: 97
+
+Performing value iteration for iteration: 6.......
+Current State: 97
+Best action : 1
+New State: 97
+
+Performing value iteration for iteration: 7.......
+Current State: 97
+Best action : 2
+New State: 98
+
+Performing value iteration for iteration: 8.......
+Current State: 98
+Best action : 1
+New State: 98
+
+Performing value iteration for iteration: 9.......
+Current State: 98
+Best action : 2
+New State: 99
+
+Performing value iteration for iteration: 10.......
+Current State: 99
+Best action : 1
+New State: 99
+
+Performing value iteration for iteration: 11.......
+Current State: 99
+Best action : 2
+New State: 99
+
+Performing value iteration for iteration: 12.......
+Current State: 99
+Best action : 3
+New State: 98
+
+Performing value iteration for iteration: 13.......
+Current State: 98
+Best action : 3
+New State: 97
+
+north,dest_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 14.......
+Current State: 97
+Best action : 3
+New State: 96
+
+Performing value iteration for iteration: 15.......
+Current State: 96
+Best action : 0
+New State: 91
+
+north,dest_x,increment deleted due to overlapping conditions after update(effectlist[k])
+Performing value iteration for iteration: 16.......
+Current State: 91
+Best action : 1
+New State: 96
+
+north,taxi_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 17.......
+Current State: 96
+Best action : 1
+New State: 96
+
+Performing value iteration for iteration: 18.......
+Current State: 96
+Best action : 2
+New State: 97
+
+Performing value iteration for iteration: 19.......
+Current State: 97
+Best action : 4
+New State: 497
+
+Performing value iteration for iteration: 20.......
+Current State: 497
+Best action : 0
+New State: 492
+
+north,dest_y,increment deleted due to overlapping conditions after update(effectlist[k])
+north,passg_x,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 21.......
+Current State: 492
+Best action : 1
+New State: 497
+
+north,passg_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 22.......
+Current State: 497
+Best action : 1
+New State: 497
+
+Performing value iteration for iteration: 23.......
+Current State: 497
+Best action : 2
+New State: 498
+
+north,passg_y,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 24.......
+Current State: 498
+Best action : 3
+New State: 497
+
+north,in_taxi,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 25.......
+Current State: 497
+Best action : 4
+New State: 497
+
+Performing value iteration for iteration: 26.......
+Current State: 497
+Best action : 3
+New State: 496
+
+north,passg_y,set-to deleted due to overlapping conditions after update(s_cond)
+north,in_taxi,set-to deleted due to overlapping conditions after update(s_cond)
+west,passg_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 27.......
+Current State: 496
+Best action : 1
+New State: 496
+
+Performing value iteration for iteration: 28.......
+Current State: 496
+Best action : 3
+New State: 496
+
+Performing value iteration for iteration: 29.......
+Current State: 496
+Best action : 4
+New State: 496
+
+Performing value iteration for iteration: 30.......
+Current State: 496
+Best action : 5
+New State: 496
+
+Performing value iteration for iteration: 31.......
+Current State: 496
+Best action : 2
+New State: 497
+
+north,dest_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 32.......
+Current State: 497
+Best action : 5
+New State: 497
+
+Performing value iteration for iteration: 33.......
+Current State: 497
+Best action : 0
+New State: 492
+
+Performing value iteration for iteration: 34.......
+Current State: 492
+Best action : 2
+New State: 493
+
+south,taxi_x,set-to deleted due to overlapping conditions after update(s_cond)
+south,taxi_y,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 35.......
+Current State: 493
+Best action : 3
+New State: 492
+
+south,dest_x,increment deleted due to overlapping conditions after update(s_cond)
+south,dest_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 36.......
+Current State: 492
+Best action : 4
+New State: 492
+
+Performing value iteration for iteration: 37.......
+Current State: 492
+Best action : 3
+New State: 491
+
+south,taxi_y,set-to deleted due to overlapping conditions after update(s_cond)
+south,dest_y,increment deleted due to overlapping conditions after update(s_cond)
+south,dest_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 38.......
+Current State: 491
+Best action : 3
+New State: 491
+
+Performing value iteration for iteration: 39.......
+Current State: 491
+Best action : 4
+New State: 491
+
+Performing value iteration for iteration: 40.......
+Current State: 491
+Best action : 5
+New State: 491
+
+Performing value iteration for iteration: 41.......
+Current State: 491
+Best action : 2
+New State: 492
+
+south,taxi_x,increment deleted due to overlapping conditions after update(s_cond)
+south,passg_x,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 42.......
+Current State: 492
+Best action : 5
+New State: 492
+
+Performing value iteration for iteration: 43.......
+Current State: 492
+Best action : 0
+New State: 487	(S_max)

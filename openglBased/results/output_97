@@ -1,0 +1,378 @@
+Read global directions .....
+Read Walls ........
+Read start positions ....
+Performing value iteration for iteration: 0.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 97
+0,  0,  0,  0,  0,  -9,  
+Best action : 0
+New State: 92
+
+Performing value iteration for iteration: 1.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 92
+0,  0,  0,  0,  -9,  -9,  
+Best action : 0
+New State: 87
+
+Performing value iteration for iteration: 2.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 87
+0,  0,  0,  0,  -9,  -9,  
+Best action : 0
+New State: 82
+
+north,taxi_y,increment deleted due to overlapping conditions after update(effectlist[k])
+Performing value iteration for iteration: 3.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 82
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 87
+
+Performing value iteration for iteration: 4.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 87
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 92
+
+north,taxi_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 5.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 92
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 97
+
+Performing value iteration for iteration: 6.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 97
+-1,  0,  0,  0,  0,  -9,  
+Best action : 1
+New State: 97
+
+Performing value iteration for iteration: 7.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 97
+-1,  -1,  0,  0,  0,  -9,  
+Best action : 2
+New State: 98
+
+Performing value iteration for iteration: 8.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 98
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 98
+
+Performing value iteration for iteration: 9.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 98
+-1,  -1,  0,  0,  -9,  -9,  
+Best action : 2
+New State: 99
+
+Performing value iteration for iteration: 10.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 99
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 99
+
+Performing value iteration for iteration: 11.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 99
+-1,  -1,  0,  0,  -9,  -9,  
+Best action : 2
+New State: 99
+
+Performing value iteration for iteration: 12.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 99
+-1,  -1,  -1,  0,  -9,  -9,  
+Best action : 3
+New State: 98
+
+Performing value iteration for iteration: 13.......
+Atleast changed once !
+Total Iterations: 3
+Current State: 98
+-1,  -1,  -2,  0,  -9,  -9,  
+Best action : 3
+New State: 97
+
+north,dest_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 14.......
+Atleast changed once !
+Total Iterations: 4
+Current State: 97
+-1,  -1,  -2,  0,  0,  -9,  
+Best action : 3
+New State: 96
+
+Performing value iteration for iteration: 15.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 96
+0,  0,  0,  0,  -9,  -9,  
+Best action : 0
+New State: 91
+
+north,dest_x,increment deleted due to overlapping conditions after update(effectlist[k])
+Performing value iteration for iteration: 16.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 91
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 96
+
+north,taxi_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 17.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 96
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 96
+
+Performing value iteration for iteration: 18.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 96
+-1,  -1,  0,  0,  -9,  -9,  
+Best action : 2
+New State: 97
+
+Performing value iteration for iteration: 19.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 97
+-1,  -1,  -2,  -1,  0,  -9,  
+Best action : 4
+New State: 497
+
+Performing value iteration for iteration: 20.......
+Atleast changed once !
+Total Iterations: 3
+Current State: 497
+0,  0,  0,  0,  0,  -9,  
+Best action : 0
+New State: 492
+
+north,dest_y,increment deleted due to overlapping conditions after update(effectlist[k])
+north,passg_x,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 21.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 492
+-1,  0,  0,  0,  0,  -9,  
+Best action : 1
+New State: 497
+
+north,passg_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 22.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 497
+-1,  0,  0,  0,  0,  -9,  
+Best action : 1
+New State: 497
+
+Performing value iteration for iteration: 23.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 497
+-1,  -1,  0,  0,  0,  -9,  
+Best action : 2
+New State: 498
+
+north,passg_y,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 24.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 498
+-1,  -1,  -1,  0,  0,  -9,  
+Best action : 3
+New State: 497
+
+north,in_taxi,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 25.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 497
+-1,  -1,  -1,  -1,  0,  -9,  
+Best action : 4
+New State: 497
+
+Performing value iteration for iteration: 26.......
+Atleast changed once !
+Total Iterations: 4
+Current State: 497
+-2,  -2,  -3,  -1,  -2,  -9,  
+Best action : 3
+New State: 496
+
+north,passg_y,set-to deleted due to overlapping conditions after update(s_cond)
+north,in_taxi,set-to deleted due to overlapping conditions after update(s_cond)
+west,passg_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 27.......
+Total Iterations: 1
+Current State: 496
+-1,  0,  -2,  0,  0,  -9,  
+Best action : 1
+New State: 496
+
+Performing value iteration for iteration: 28.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 496
+-1,  -1,  -2,  0,  0,  -9,  
+Best action : 3
+New State: 496
+
+Performing value iteration for iteration: 29.......
+Atleast changed once !
+Total Iterations: 2
+Current State: 496
+-1,  -1,  -2,  -1,  0,  -9,  
+Best action : 4
+New State: 496
+
+Performing value iteration for iteration: 30.......
+Atleast changed once !
+Total Iterations: 11
+Current State: 496
+-10,  -10,  -10,  -10,  -10,  -9,  
+Best action : 5
+New State: 496
+
+Performing value iteration for iteration: 31.......
+Atleast changed once !
+Total Iterations: 3
+Current State: 496
+-11,  -11,  -10,  -11,  -11,  -20,  
+Best action : 2
+New State: 497
+
+north,dest_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 32.......
+Total Iterations: 1
+Current State: 497
+-10,  -10,  -10,  -11,  -10,  -9,  
+Best action : 5
+New State: 497
+
+Performing value iteration for iteration: 33.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 497
+-29,  -29,  -29,  -30,  -29,  -39,  
+Best action : 0
+New State: 492
+
+Performing value iteration for iteration: 34.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 492
+-1,  -1,  0,  0,  0,  -9,  
+Best action : 2
+New State: 493
+
+south,taxi_x,set-to deleted due to overlapping conditions after update(s_cond)
+south,taxi_y,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 35.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 493
+-1,  -1,  -1,  0,  0,  -9,  
+Best action : 3
+New State: 492
+
+south,dest_x,increment deleted due to overlapping conditions after update(s_cond)
+south,dest_x,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 36.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 492
+-1,  -1,  -1,  -1,  0,  -9,  
+Best action : 4
+New State: 492
+
+Performing value iteration for iteration: 37.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 492
+-2,  -2,  -3,  -1,  -2,  -9,  
+Best action : 3
+New State: 491
+
+south,taxi_y,set-to deleted due to overlapping conditions after update(s_cond)
+south,dest_y,increment deleted due to overlapping conditions after update(s_cond)
+south,dest_y,set-to deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 38.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 491
+-1,  -1,  -2,  0,  0,  -9,  
+Best action : 3
+New State: 491
+
+Performing value iteration for iteration: 39.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 491
+-1,  -1,  -2,  -1,  0,  -9,  
+Best action : 4
+New State: 491
+
+Performing value iteration for iteration: 40.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 491
+-10,  -10,  -10,  -10,  -10,  -9,  
+Best action : 5
+New State: 491
+
+Performing value iteration for iteration: 41.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 491
+-11,  -11,  -10,  -11,  -11,  -20,  
+Best action : 2
+New State: 492
+
+south,taxi_x,increment deleted due to overlapping conditions after update(s_cond)
+south,passg_x,increment deleted due to overlapping conditions after update(s_cond)
+Performing value iteration for iteration: 42.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 492
+-10,  -10,  -10,  -11,  -10,  -9,  
+Best action : 5
+New State: 492
+
+Performing value iteration for iteration: 43.......
+Atleast changed once !
+Total Iterations: 20
+Current State: 492
+-29,  -29,  -29,  -30,  -29,  -39,  
+Best action : 0
+New State: 487
+
+Q written to policy.txt
+Inside temp_test1()

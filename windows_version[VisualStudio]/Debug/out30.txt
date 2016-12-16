@@ -1,0 +1,17 @@
+Read global directions .....
+Read Walls ........
+Read start positions ....
+Performing value iteration for iteration: 0.......
+Atleast changed once !
+Current State: 76
+0,  0,  0,  0,  -9,  -9,  
+Best action : 0
+New State: 76
+
+Performing value iteration for iteration: 1.......
+Atleast changed once !
+Current State: 76
+-1,  0,  0,  0,  -9,  -9,  
+Best action : 1
+New State: 81
+

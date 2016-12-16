@@ -1,0 +1,3 @@
+Taxi :  Black
+Passenger: grey
+Destination:  orange

@@ -1,0 +1,7 @@
+touchN,taxi,wall
+touchS,taxi,wall
+touchE,taxi,wall
+touchW,taxi,wall
+on,taxi,passenger
+on,taxi,destination
+true,in_taxi,passenger

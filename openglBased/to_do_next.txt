@@ -1,0 +1,52 @@
+DONE
+---------
+ 
+ 
+  - Add a function applyEffect() for each effect that does operation based on a switch/case predefined operation.
+  - Call this function in predictTransition() {last else part} and in isCompatible() add another if() clause 
+  - add getStateNumber() function , use it in predictTransition to appropriately call applyEffect() above.
+  - test each function individually => both findMatchingModel()'s work 
+				    => eff_att() works
+				    => compareCondStr works !
+				    => commutativeOp() works !
+				    => updateFailure() works !
+				    => FailureStateActionCombo() works !
+				    => isCompatible() is working
+				    => 	applyEffect() works 
+  - issue in isCompatible/applyEffect() attribute value must be passed from caller ! (CHANGED FUNCTION SIGN.)
+  next step : figure out how T(s_/s,a) works and how KWIK model is used to select an action
+			: rewards are -1 for each navigation step , -10 for dropoff/pickup at wrong location , 0 for correct dropoff
+- FIND APPROPRIATE WAYS TO UPDATE Q(s,a) (Using a way mentioned by David)
+- test the carryOutAction() function newly written.
+- given state number visualize it quickly 
+- new model after talking to David
+
+TO DO :
+----------
+Doubts :
+	- before doing value iteration, initialize Q randomly everytime or use previous value of Q 
+	- use explore/ exploit when choosing action ? 
+
+- think about making all arguments in all the functions as indexes of the list.
+
+- Decide the APPROPRIATE value of "k" in doormax_main() when calling addExperience()
+
+- THINK ABOUT GOING BACK TO 4 attribute value instead of 7 (i.e. simply assigning indexes to passenger/destination) , avoid the redundant sea
+rch in predictTransition()  to get the search number back .
+
+
+
+OPTIONAL TO-DOs
+-------------------------
+- make the initialization of action, attribute etc as read from file operation, instead of hard-coding them. 
+
+- remove the class passenger and make it just an integer.
+
+- remove the class "relation" and make struct declaration in oorl_learner.h
+
+DOUBTS
+-------------
+
+- iterations in main() oorl function ran according to a fixed max_itr number or terminal state condition ?
+- what is exploration policy in selection of action ?
+- what is "k" in "addExperience" function ?

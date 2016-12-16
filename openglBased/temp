@@ -1,0 +1,283 @@
+#include "headController.h"
+
+// variables copied from controller.cpp 
+vector<Vec2f> lstDirns ;
+unsigned int t0 = 0 ; // the global time variable
+float dt = 0.1 ; //time step for computation it was .1
+float DAMP = 100 ;  // DAMP = 100 ;
+int tUpdate = 4 ;  // WEIRD, it should be 40 in windows
+unsigned int MAX_COUNT = 65535 ; // just some huge value
+bool isLearningMode = false ;  // Change it according to the mode
+
+int win_x = 600 , win_y = 600 ; 
+Vec2f m_goalTarget ; //  the common target for 
+
+
+// Constant Variables 
+
+float limit_x ;   // sprite drawing widths
+float limit_y  ;
+
+int lastChecked = 0 ; // variable to track checking of boundary
+int th_2 = 20 ;
+int val = 0;
+float h = 30 ; // grid width was 0.3
+Vec2f pPassesnger(8,8) ;
+Vec2f pDes(0,1) ;
+int gridSize =60 ;   // the size of the grid
+Vec2f v1,v2 ; // temporary vectors to be used
+int num_agents; 
+
+ void checkCollison(agent * x) ;
+
+ // Other variables for temporary usage
+ Vec2f tvec ; int tint1, tint2 ;  
+
+ void headController :: initScenery()
+ {
+	 vector<Vec2f>  x; 
+	readData(&x, "files/wall_positions2.txt");
+	cout << "Read wall Info ......\n" ;
+	//cout << x[0] << endl << x[1] << endl ;
+	for(int i=0;i<x.size()/2;i++)
+		lstWalls.push_back(new wall(x[2*i], x[2*i+1])) ;
+	cout << "Read Walls ........\n" ;
+	// add Human and human's destination location here
+ }
+
+
+
+ void headController :: initAgentStuff()
+ {
+	 readData(&lstDirns, "files/directionsSimple.txt"); 
+	cout << "Read global directions .....\n" ;
+	//for(int i=0;i<4;i++)
+		//cout << lstDirns[i][0] << " " << lstDirns[i][1] << endl ;
+	taxi = new agent() ; 
+	objpassenger = new passenger(theGrid->worldFromGrid(Vec2f(8,2)));
+	taxi->m_learn->print_set_T() ;
+ }
+
+ void headController :: InitSystem()
+ {
+	 theGrid = new grid(gridSize,gridSize, pPassesnger,pDes);  // Later maintain a list of GRIDs for different stages
+	initAgentStuff(); 
+	initScenery();  
+	//theGrid->addWallInfo(lstWalls) ;   <-- don't need to do this explicitly 
+	//theGrid->printGrid();
+	taxi->m_pos = theGrid->worldFromGrid(Vec2f(1,1)) ;
+ }
+
+
+ void headController :: Update()
+ {
+	 
+		if(t0 % tUpdate == 0)
+		{ 
+			
+			checkCollison(taxi);
+			taxi->update();
+			if(magnitude(taxi->m_target-taxi->m_pos)>0.0001)
+			{
+				taxi->m_pos += (DAMP*dt)*taxi->m_vel ;
+			}
+		}
+		t0++ ;
+		t0 %= MAX_COUNT ;
+		glutPostRedisplay ();
+	 
+ }
+
+
+void headController :: DrawObjects()
+{
+	for(int i=0;i<lstWalls.size();i++)
+		lstWalls[i]->drawWall() ;
+	taxi->draw(Vec3f(1,1,1));  // only one agent/taxi to be drawn
+	objpassenger->draw() ;
+	// draw destination 
+	Vec2f pd = theGrid->worldFromGrid(pDes);
+	glColor3f(1.0,0.5,0.0) ;
+	glRectf(pd[0] - th_2, pd[1]-th_2, pd[0]+th_2, pd[1]+th_2) ;					
+}
+
+
+// check similarity of vectors
+bool similar_vectors(Vec2f x, Vec2f y)
+{
+	return ((x[0] == y[0]) && (x[1] == y[1])) ;
+}
+
+
+
+
+bool check_str(const char *s1, char *s2, int l)
+{
+	bool r = true ;
+	for(int i=0;i<l;i++)
+	{
+		if(s1[i] != s2[i])
+		{
+			r = false ; break ;
+		}
+	}
+	return r ;
+}
+
+// takes agent, walls, destination,passenger information and returns "condition string" of the form "1000101.."
+/*UPDATE - headController can access relation list via agent->learner*/
+
+
+string headController :: cond() 
+{
+	string result ;
+	int i, temp ; 
+	string r ;
+	string s1 = "taxi" ;
+	char * s2 = "wall" ;
+	char * s3 = "passenger" ;
+	char * s4 = "destination" ;
+	vector<relation*> list  = taxi->m_learn->getRelationList() ;
+	// currently assuming that order in the text file is all that matterss
+	
+	cout << list.size() << endl ; 
+	
+	for(int i=0;i<list.size();i++)
+	{
+		//cout << "I was here " << endl ;
+		if(list[i]->obj1 == s1)
+		{
+			//cout << "it is "<< list[i]->obj2 << " ." << endl ;
+			//if(list[i]->obj2.compare("wall")==1)
+			//if(list[i]->obj2 == s2)	
+			if(check_str(list[i]->obj2.c_str(),s2,4))
+			{
+				//cout << list[i]->obj2 << endl ;
+				
+				if(list[i]->name=="touchN")
+				{
+				// wall on north
+					if(win_y-taxi->m_pos[1] < 2*gridSize)
+						result.append("1");
+					else
+						result.append("0");
+				}
+				
+				else if(list[i]->name=="touchS")
+				{
+				// wall on south
+					if(win_y+taxi->m_pos[1] < 2*gridSize)
+						result.append("1");
+					else
+						result.append("0");
+				}
+				
+				// wall on east
+				else if(list[i]->name =="touchE")
+				{
+					
+					r = "0" ;
+					
+					for(int k=0;k<lstWalls.size();k++)
+					{
+						// check N location 
+						// if taxi's y is between y1 and y2 and particle's x- X0 < threshold
+						temp = taxi->m_pos[0] - lstWalls[k]->m_A[0] ;
+						//cout << lstWalls[i]->m_A[1] << endl ;
+						//cout << lstWalls[i]->m_B[1] << endl ;
+						
+						
+						if(taxi->m_pos[1] <= lstWalls[k]->m_A[1] &&  
+							taxi->m_pos[1] >= lstWalls[k]->m_B[1] && 
+								temp<0 && temp> -2*gridSize)
+						{
+							r = "1" ; break ;
+						}
+						
+					}
+					
+					if(r=="0" && (win_x-taxi->m_pos[0]<2*gridSize))  // check proximity to boundaries
+						r = "1" ;
+					result.append(r);
+				}
+				
+				// wall on west
+				else
+				{
+					r = "0" ;
+					for(int k=0;k<lstWalls.size();k++)
+					{
+						// check N location 
+						// if taxi's y is between y1 and y2 and X0-particle's x < threshold
+						temp = taxi->m_pos[0] - lstWalls[k]->m_A[0] ;
+						if(taxi->m_pos[1]<= lstWalls[k]->m_A[1] &&  
+							taxi->m_pos[1]>= lstWalls[k]->m_B[1] && 
+								temp>0 && temp< 2*gridSize)
+						{
+							r = "1" ; break ;
+						}
+					}
+					if(r=="0" && (win_x+taxi->m_pos[0]<2*gridSize))  // check proximity to boundaries
+						r = "1" ; 
+					result.append(r);
+				}  
+				
+				
+			}
+			// START TESTING HERE !!!
+			
+			// relations between TAXI AND PASSENGER
+			else if (check_str(list[i]->obj2.c_str(),s3,9)) 
+			{
+				//cout << list[i]->obj1<< "," << list[i]->obj2 << endl ;
+				similar_vectors( theGrid->gridFromWorld(taxi->m_pos),theGrid->gridFromWorld(objpassenger->m_pos))?
+				result.append("1"):result.append("0"); 
+			}
+			
+			// relations between TAXI and DESTINATION
+			// pDestination is already in grid co-ordinates
+			else if (check_str(list[i]->obj2.c_str(),s4,11))
+			{
+				cout << list[i]->obj1<< "," << list[i]->obj2 << endl ;
+				similar_vectors( theGrid->gridFromWorld(taxi->m_pos),pDes)?
+				result.append("1"):result.append("0"); 
+			}
+		}
+		else  // 
+		{
+			cout << list[i]->obj1<< "," << list[i]->obj2 << endl ;
+			// Add relation between in_taxi and passenger here 
+			// corrently just appending a 0 
+			//result.append("0") ;
+		}
+	}
+	
+	return result ;
+	
+}
+
+
+
+
+
+
+
+
+
+ // other functions used by headCOntroller
+
+ void checkCollison(agent * x)
+{
+	/*checking collision with boundary of the walls*/
+	 if(t0 - lastChecked < 10*tUpdate) /*boundary has been checked recently*/
+		 return ;
+	if( (win_x - abs(x->m_pos[0])) < th_2  || (win_y- abs(x->m_pos[1])) < th_2)
+	{
+		lastChecked = t0 ; 
+		x->isMoving = false ;  
+		return ;
+	}  
+	/*if control flow has reached here, its OK*/
+	x->isMoving = true ;
+	
+}

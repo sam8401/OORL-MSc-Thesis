@@ -1,0 +1,70 @@
+
+DONE
+---------
+- state matrix instead of previously designed state-list.
+- design and set up the attribute  data structure. (number of attributes same as the number of columns in state matrix)
+- understand the prediction data structure properly.
+- Get all other environment variables ready to start writing the doormax() main and other methods.
+- save copy of entire project  (nx4 state_mat version)
+- change state_mat from Nx4 to Nx7 (x,t for each passenger and destination) and also an in_taxi boolean variable
+- set up proper data structure for F_a  in oorl_learner class (the list of all conditions strings for each action)
+	[failure conditions to be stored as comma separated strings.
+- change the initialization function for the attributes !
+
+- write comparison functions for conditional strings 
+- Finish DoorMax_main() 
+- make effect from string to nvpair
+- Finish predictTransition() 
+- Get rid of useless functions in oorl_learner.h
+- make use of state_mat[pstate][6] in cond() instead of looking into world.
+- write commutative operator for conditonal strings.
+- write and test updateFailure() 
+- write function eff_att(attr,s,s')
+- Finish Writing addExperience()	
+- the commutative operator isn't symmetric, check this before testing ! (not so sure of this)
+
+- Add helper function to get s_max from states (need state,action matrix ?)
+ - create state/action reward matrix and use to find out s_max. 
+ - test what Q is created and  test s_max  // this is wrong, s_max is some fixed terminal state (FIXED)
+ ------------------------------------------------ 
+ - Add helper function to select action based on "exploration policy" in doormax_main()
+- Add function getAction() and test it
+- make s_max a constant variable instead of function, saved and removed the function
+ - add a reward function
+ 
+  - Add a function applyEffect() for each effect that does operation based on a switch/case predefined operation.
+  - Call this function in predictTransition() {last else part} and in isCompatible() add another if() clause 
+- add getStateNumber() function , use it in predictTransition to appropriately call applyEffect() above.
+ 
+TO DO :
+----------
+  
+- start testing the Application !  test FailureStateActionCombo()  and other small helper functions
+
+- addExperience() might not be working, find out why
+
+- FIND APPROPRIATE WAYS TO UPDATE Q(s,a)
+
+- think about making all arguments in all the functions as indexes of the list.
+
+- Decide the APPROPRIATE value of "k" in doormax_main() when calling addExperience()
+
+- THINK ABOUT GOING BACK TO 4 attribute value instead of 7 (i.e. simply assigning indexes to passenger/destination) , avoid the redundant sea
+rch in predictTransition()  to get the search number back .
+
+
+
+OPTIONAL TO-DOs
+-------------------------
+- make the initialization of action, attribute etc as read from file operation, instead of hard-coding them. 
+
+- remove the class passenger and make it just an integer.
+
+- remove the class "relation" and make struct declaration in oorl_learner.h
+
+DOUBTS
+-------------
+
+- iterations in main() oorl function ran according to a fixed max_itr number or terminal state condition ?
+- what is exploration policy in selection of action ?
+- what is "k" in "addExperience" function ?
